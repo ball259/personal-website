@@ -17,24 +17,26 @@ npm run preview  # 本地预览构建产物
 
 ## 部署到 Vercel
 
-1. 在 GitHub 新建仓库，把本项目推送上去：
+> 代码已推送到 https://github.com/ball259/personal-website ，可直接从第 2 步开始。
+
+1. 代码推送到 GitHub（已完成）：
    ```bash
-   git init && git add . && git commit -m "feat: 个人网站"
-   git remote add origin https://github.com/<你的用户名>/personal-website.git
+   git remote add origin https://github.com/ball259/personal-website.git
    git push -u origin main
    ```
 2. 打开 [vercel.com](https://vercel.com)，用 GitHub 注册（选 Hobby 免费方案），跳过安全设置
-3. Add New Project → 选择刚推送的仓库
-4. Vercel 会自动识别 Vite 框架，无需改配置，点击 Deploy
-5. 部署完成后获得域名（如 `personal-website.vercel.app`），即作业第 05 项要提交的地址
+3. Add New Project → 选择 `personal-website` 仓库
+4. Vercel 会自动识别 Vite 框架，无需改配置（`vercel.json` 已配置 SPA 路由回退），点击 Deploy
+5. 部署完成后获得域名（如 `personal-website-ball259.vercel.app`），即作业第 05 项要提交的地址
 
 ## 部署到 Cloudflare Pages
 
-1. 代码推送到 GitHub（同上）
+1. 代码推送到 GitHub（已完成）
 2. 打开 [dash.cloudflare.com](https://dash.cloudflare.com) → Workers & Pages → Create → Pages → Connect to Git
-3. 选择仓库，框架预设选 **Vite**
+3. 选择 `personal-website` 仓库，框架预设选 **Vite**
    - 构建命令：`npm run build`
    - 输出目录：`dist`
+   （`public/_redirects` 已配置 SPA 路由回退，无需额外设置）
 4. 点击 Save and Deploy，完成后获得 `xxx.pages.dev` 域名
 
 > 提交作业截图建议：03 → 分别截图 PRD.md / TECH_DESIGN.md / AGENTS.md 内容；04 → 部署后的网站页面（首页、博客、/admin 后台各来一张）；05 → 部署平台给出的域名地址。
